@@ -47,26 +47,30 @@ https://elm-lang.org/
 
 Note:
 
-Well... elm describes itself as "A delightful language for reliable webapp" - given that it bears a strong resemblence F# the language might well be delightful and we all want reliable web apps...
+Well... elm describes itself as "A delightful language for reliable webapps" - that's a bold claim, but there are good reasons why one might find it delightful and there's a strong argument that functional programming lends itself to reliable applications 
 
 ---
 
 # So what is Elm? 
 
 - Functional language with an ML syntax
+  - Statically typed
   - All functions are pure
      - Always returns the same result for a given input
      - _*No side effects*_
-- A DSL for creating html
+- DSL for creating html
 - Framework for web applications
-     
+
 Note:
 
-And in many respects the reasons elm claims to be delightful and reliable are the reasons to want to be like elm - more specifically elm is a Function Language, in Elm all functions are pure - for a given input we will always get the same out and there are _no side effects_ - which makes things interesting and we'll come back to that in a moment
+So what is elm?
+Well firstly its a functional language with an ML syntax - so in that respect very similar to F#
+Its statically typed, so the compiler is your friend
+Everything is a function - and all functions are pure  that means that for any given input we will always get the same output and also that there are _no side effects_ - which makes things interesting and we'll come back to that in a moment
 
 There is a DSL for creating html
 
-And there is a framework for running the applications - and this is where things start to get interesting
+And there is a framework that makes it possible to run an application, and this is the core reason for things being elmish
 
 ---
 
@@ -77,31 +81,52 @@ Model -> View -> Update
 Note:
 As I said, that you can only write pure functions is interesting, user input is not deterministic and rendering a UI to the screen is a side effect - and this is where the framework, more specifically The Elm Architecture comes in.
 
-The Elm Architecture is the Model, View, Update pattern - that was the inspiration for redux amongst other things - and its this pattern that enables your pure functions to create a proper user interace.
+The Elm Architecture is the Model, View, Update pattern - that was the inspiration for redux amongst other things - and its a framework this pattern that enables your pure functions to create a proper user interace.
 
 So what is the model view architecture?
 
-I think this is best illustrated with code...
+---
+
+# Model
+
+Note:
+We start with a Model that defines the current state of your app, it could be all your data for a small app
 
 ---
 
-# Model, View, Update
+# Model -> View
+
+Note:
+The view is a pure function that takes your model and returns the view, in the case of Elm that would be http, but for fabulous its Xamarin Forms. The view gets passed to the runtime framework which does a diff and renders the ui to the screen
 
 ---
 
-# Hello world in Elm to illustrate the pattern with type annotations.
+# View -> Update
+
+Note:
+
+Your users interaction with the view will generate a message - from a list you define - and that will get passed with the model to the update function, Update is a pure function that will return a new model
 
 ---
 
-# Getting started
+# Update -> Model
 
-dotnet new -i
-
-dotnet new...
+Note:
+The new model will be passed to the view function and round we go again. Some of you may have noticed that this limits you to whatever you have in your model (which makes it ephemeral...) and you'd be right, so there's more cheating to get round that and I'll come back to that later.
 
 ---
 
 # A minimal application
+
+With mockup
+
+Note:
+So lets take a look at a minimal application - how about a minimal hello world? Per this classy mockup?
+
+The value we type in the box will appear in the greeting
+
+---
+
 
 ---
 
