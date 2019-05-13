@@ -71,7 +71,7 @@ let webApp =
             choose [
                 route "/" 
                 >=> warbler(fun _ ->
-                    // Thread.Sleep(4000) 
+                    Thread.Sleep(4000) 
                     text (quotes.[rnd.Next(Array.length quotes)]))
             ]
         setStatusCode 404 >=> text "Not Found" ]
