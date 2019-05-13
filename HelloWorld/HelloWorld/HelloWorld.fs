@@ -19,18 +19,31 @@ module App =
 
     let update msg model =
         match msg with
-        | NameChanged newName -> { model with Name = newName }, Cmd.none
+        | NameChanged newName ->
+            { model with Name = newName }, Cmd.none
 
     let view (model: Model) dispatch =
         View.ContentPage(
-          content = View.StackLayout(padding = 20.0, verticalOptions = LayoutOptions.Start,
+          content = View.StackLayout(
+            padding = 20.0, 
+            verticalOptions = LayoutOptions.Start,
             children = [ 
-                View.Label(text = sprintf "Hello %s!" model.Name, horizontalOptions = LayoutOptions.Start, widthRequest=200.0, horizontalTextAlignment=TextAlignment.Start)
-                View.Editor(text = model.Name, textChanged = (fun args -> dispatch (NameChanged(args.NewTextValue))))
+                View.Label(
+                    text = sprintf "Hello %s!" model.Name, 
+                    horizontalOptions = LayoutOptions.Start, 
+                    widthRequest=200.0, 
+                    horizontalTextAlignment=TextAlignment.Start
+                    )
+                View.Editor(
+                    text = model.Name,
+                    textChanged = 
+                        (fun args -> dispatch (NameChanged(args.NewTextValue)))
+                    )
             ]))
 
     // Note, this declaration is needed if you enable LiveUpdate
-    let program = Program.mkProgram init update view
+    let program =
+        Program.mkProgram init update view
 
 type App () as app = 
     inherit Application ()
