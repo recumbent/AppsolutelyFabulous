@@ -1,5 +1,4 @@
-﻿// Copyright 2018 Fabulous contributors. See LICENSE.md for license.
-namespace HelloWorld
+﻿namespace HelloWorld
 
 open System.Diagnostics
 open Fabulous.Core
@@ -29,19 +28,16 @@ module App =
             verticalOptions = LayoutOptions.Start,
             children = [ 
                 View.Label(
-                    text = sprintf "Hello %s!" model.Name, 
-                    horizontalOptions = LayoutOptions.Start, 
-                    widthRequest=200.0, 
-                    horizontalTextAlignment=TextAlignment.Start
+                    text = sprintf "Hello %s!" model.Name
                     )
                 View.Editor(
                     text = model.Name,
                     textChanged = 
-                        (fun args -> dispatch (NameChanged(args.NewTextValue)))
+                        (fun args -> 
+                            dispatch (NameChanged(args.NewTextValue)))
                     )
             ]))
 
-    // Note, this declaration is needed if you enable LiveUpdate
     let program =
         Program.mkProgram init update view
 
