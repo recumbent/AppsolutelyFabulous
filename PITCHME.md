@@ -125,7 +125,7 @@ So lets take a look at a minimal application - how about a minimal hello world? 
 
 The value we type in the box will appear in the greeting
 
----?code=Examples/HelloWorld.fs&lang=fsharp&color=#1E1F21&title=Hello World App
+---?code=Examples/HelloWorld-01.fs&lang=fsharp&color=#1E1F21&title=Hello World App
 
 @[9-10](Model)
 @[24-39](View - Content Page)
@@ -139,6 +139,29 @@ The value we type in the box will appear in the greeting
 ---
 
 # Run...
+
+---
+
+# Live coding demo?
+
+---?code=Examples/HelloWorld.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
+
+@[12](Add time to Model)
+@[21](Initialise time)
+@[33-34](Format time)
+@[45-46](Add time to View)
+
+---
+
+# Screenshot with no ticking
+
+---?code=Examples/HelloWorld.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
+
+@[17](Time Changed)
+@[30-31](Update with changed time)
+@[56-60](Timer function)
+@[73](Add subscription)
+
 ---
 
 An application with navigation
