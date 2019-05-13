@@ -125,9 +125,18 @@ So lets take a look at a minimal application - how about a minimal hello world? 
 
 The value we type in the box will appear in the greeting
 
+---?code=Examples/HelloWorld.fs&lang=fsharp&color=#1E1F21&title=Hello World App
+
+@[10-11](Model)
+@[24-30](View)
+@[13-14](Message)
+@[20-22](Update)
+@[33](Program)
+@[35-43](App)
+
 ---
 
-
+# Run...
 ---
 
 An application with navigation
