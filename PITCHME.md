@@ -144,7 +144,7 @@ The value we type in the box will appear in the greeting
 
 # Live coding demo?
 
----?code=Examples/HelloWorld.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
+---?code=Examples/HelloWorld-02.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
 
 @[12](Add time to Model)
 @[21](Initialise time)
@@ -155,7 +155,7 @@ The value we type in the box will appear in the greeting
 
 # Screenshot with no ticking
 
----?code=Examples/HelloWorld.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
+---?code=Examples/HelloWorld-02.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
 
 @[17](Time Changed)
 @[30-31](Update with changed time)
