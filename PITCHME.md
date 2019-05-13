@@ -128,11 +128,12 @@ The value we type in the box will appear in the greeting
 ---?code=Examples/HelloWorld.fs&lang=fsharp&color=#1E1F21&title=Hello World App
 
 @[10-11](Model)
-@[25-42](View)
+@[16-19](Init)
+@[25-30](View - Content Page)
+@[30-42](View - Children)
 @[13-14](Message)
 @[20-22](Update)
 @[45-46](Program)
-@[16-19](Init)
 @[48-56](App)
 
 ---
