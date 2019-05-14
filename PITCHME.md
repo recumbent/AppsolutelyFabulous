@@ -138,11 +138,7 @@ The value we type in the box will appear in the greeting
 
 ---
 
-# Run...
-
----
-
-# Live coding demo?
+# Live Demo 01
 
 ---?code=Examples/HelloWorld-02.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
 
@@ -164,8 +160,37 @@ The value we type in the box will appear in the greeting
 
 ---
 
-An application with navigation
+A _slightly_ more complex App
+
+Note:
+
+A single page is seldom enough, nor do apps live in isolation. We need to be able to launch long running code, to make external requests, etc
+
+So lets add a page with a random quote on it
 
 ---
 
-An application with interaction with the real world
+@code[fsharp](Examples/HelloWorld-03.fs)
+
+@[21-25](Model with Page and Quote)
+@[11-13](Page Type)
+@[15-19](Request State)
+@[35-40](Initialise new properties)
+@[104-107](View Button on Main Page)
+@[31](Page changed message)
+@[61-68](Handle page changed)
+@[63-65](Main page)
+@[66-68](Quote page - command)
+@[44-53](getQuote command)
+@[52](QuoteReceived message)
+@[69-70](Handle QuoteReceived)
+@[109-137](Quote Page)
+@[77-82](Quote Text)
+
+---
+
+Live demo 03
+
+---
+
+Summary
