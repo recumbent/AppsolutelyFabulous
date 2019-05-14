@@ -1,49 +1,71 @@
 # Appsolutely Fabulous
 
+Functional mobile client development with F# and Xamarin Forms
+
 James Murphy - @recumbent
+
+---
+
+@snap[west span-40]
+### James Murphy - Software Engineer
+@snapend
+
+@snap[east span-40]
+![RML](images/RML380Z.jpg)
+@snapend
 
 ---
 
 # Fabulous?
 
-"F# Functional App Development, using Xamarin.Forms"
-
 Note:
 
 Why do we need something new?
 
-There is a really good story for cross platform application development using .NET - and by and large this is MVVM, which is a fabulous pattern that works really well... but its also _very_ object oriented. 
+There is a really good story for cross platform application mobile development using .NET with Xamarin, and for all platforms wth Xamarin forms, but whilst you can - and people do - use F# the core tends to be  MVVM, which is a pattern I like and one that that works really well... but its also _very_ object oriented. And to build an app you will have a view, in XAML, and code behind, and a you'll wire that to a view model... there may be a better way
 
 ---
 
-# So where does Fabulous come from?
+#### So where does Fabulous come from?
 
 Don Syme + Xamarin
 
 Note:
 
-I'm not quite sure what drove the decision, but someone decided there ought to be a functional first approach to writing mobile client application - and if you're Microsoft you address this problem by sending Done Syme - creator of F# to Xamarin in the hope that something interesting will happen.
+I'm not quite sure what drove the decision or what the exact process was, but someone decided there ought to be a functional first approach to writing mobile client application - and if you're Microsoft you address this problem by sending Done Syme - creator of F# to Xamarin in the hope that something interesting will happen.
 
 In this case they went looking for prior art and that led them to...
 
 ---
 
-# Fable Elmish
+@snap[north]
+## Fable Elmish
+@snapend
 
-Fable Logo + Elmish logo
+@snap[south-west span-40 fragment]
+![fable](images/fable_logo.png)
+@snapend
 
-Note
+@snap[south-east span-40 fragment]
+![elmish](images/elmish.png)
+@snapend
+
+Note:
 
 Fable - which is an F# to javascript transpiler and Elmish which is an F# framework for fable that resembles elm
 So what it elm?
 
 ---
 
+@snap[west span-40]
 # Elm
+![elm](images/Elm_logo.png)
+@snapend
 
+@snap[east span-40 fragment]
 A delightful language for reliable webapps.
-
 https://elm-lang.org/
+@snapend
 
 Note:
 
@@ -51,15 +73,19 @@ Well... elm describes itself as "A delightful language for reliable webapps" - t
 
 ---
 
-# So what is Elm? 
+### So what is Elm? 
+
+@ul
 
 - Functional language with an ML syntax
   - Statically typed
   - All functions are pure
      - Always returns the same result for a given input
      - _*No side effects*_
-- DSL for creating html
+- DSL for creating markup
 - Framework for web applications
+
+@ulend
 
 Note:
 
@@ -74,9 +100,15 @@ And there is a framework that makes it possible to run an application, and this 
 
 ---
 
-# The Elm Architecture
+@snap[west span-50]
+### The Elm Architecture
+@snapend
 
-Model -> View -> Update
+@snap[east span-30]
+@box[bg-white text-black rounded fragment](Model)
+@box[bg-white text-black rounded fragment](View)
+@box[bg-white text-black rounded fragment](Update)
+@snapend
 
 Note:
 As I said, that you can only write pure functions is interesting, user input is not deterministic and rendering a UI to the screen is a side effect - and this is where the framework, more specifically The Elm Architecture comes in.
@@ -94,14 +126,15 @@ We start with a Model that defines the current state of your app, it could be al
 
 ---
 
-# Model -> View
+# View
 
 Note:
+
 The view is a pure function that takes your model and returns the view, in the case of Elm that would be http, but for fabulous its Xamarin Forms. The view gets passed to the runtime framework which does a diff and renders the ui to the screen
 
 ---
 
-# View -> Update
+# Update
 
 Note:
 
@@ -109,16 +142,21 @@ Your users interaction with the view will generate a message - from a list you d
 
 ---
 
-# Update -> Model
+# Model
 
 Note:
+
 The new model will be passed to the view function and round we go again. Some of you may have noticed that this limits you to whatever you have in your model (which makes it ephemeral...) and you'd be right, so there's more cheating to get round that and I'll come back to that later.
 
 ---
 
-# A minimal application
+@snap[west span-40]
+### A minimal application
+@snapend
 
-With mockup
+@snap[east span-40]
+![wireframe](images/wireframe-01.jpg)
+@snapend
 
 Note:
 So lets take a look at a minimal application - how about a minimal hello world? Per this classy mockup?
@@ -133,12 +171,23 @@ The value we type in the box will appear in the greeting
 @[12-13](Message)
 @[19-22](Update)
 @[41-42](Program)
-@[16-19](Init)
+@[14-17](Init)
 @[44-52](App)
 
 ---
 
 # Live Demo 01
+
+---
+
+@snap[west span-40]
+### New feature
+@snapend
+
+@snap[east span-40]
+![wireframe](images/wireframe-02.jpg)
+@snapend
+
 
 ---?code=Examples/HelloWorld-02.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
 
@@ -160,7 +209,11 @@ The value we type in the box will appear in the greeting
 
 ---
 
-A _slightly_ more complex App
+# Live Demo 02
+
+---
+
+# A _slightly_ more complex App
 
 Note:
 
@@ -168,11 +221,9 @@ A single page is seldom enough, nor do apps live in isolation. We need to be abl
 
 So lets add a page with a random quote on it
 
----
+---?code=Examples/HelloWorld-03.fs&lang=fsharp&color=#1E1F21
 
-@code[fsharp](Examples/HelloWorld-03.fs)
-
-@[21-25](Model with Page and Quote)
+@[21-26](Model with Page and Quote)
 @[11-13](Page Type)
 @[15-19](Request State)
 @[35-40](Initialise new properties)
