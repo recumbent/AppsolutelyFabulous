@@ -187,5 +187,8 @@
       <Project>{F52FC1D0-776A-4E17-8E80-2C0426887E62}</Project>
       <Name>HelloWorld</Name>
     </ProjectReference>
+    <Reference Include="FSharp.Data">
+      <HintPath>..\packages\FSharp.Data.3.1.1\lib\netstandard2.0\FSharp.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
