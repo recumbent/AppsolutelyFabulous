@@ -105,9 +105,9 @@ And there is a framework that makes it possible to run an application, and this 
 @snapend
 
 @snap[east span-30]
-@box[bg-white text-black rounded fragment](Model)
-@box[bg-white text-black rounded fragment](View)
-@box[bg-white text-black rounded fragment](Update)
+@box[bg-white text-black rounded fragment text-15 box-padding](Model)
+@box[bg-white text-black rounded fragment text-15 box-padding](View)
+@box[bg-white text-black rounded fragment text-15 box-padding](Update)
 @snapend
 
 Note:
@@ -198,7 +198,9 @@ The value we type in the box will appear in the greeting
 
 ---
 
-# Screenshot with no ticking
+@snap[central]
+![as-designed](images/as-designed.png)
+@snapend
 
 ---?code=Examples/HelloWorld-02.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
 
@@ -244,4 +246,86 @@ Live demo 03
 
 ---
 
-Summary
+@snap[west]
+# So...
+@snapend
+
+@snap[east]
+
+@ul
+
+### The Good
+
+- Nice models via F# types
+- Compose complex views
+- Event driven
+  - All Events Known
+- Functional all the way down
+
+@ulend
+
+@snapend
+
+---
+
+@snap[west]
+# But...
+@snapend
+
+@snap[east]
+
+@ul
+
+### The less good
+
+- Work in progress
+  - Not everything is supported
+- Still have to learn Xamarin.Forms
+- Probably other things...
+
+@ulend
+
+@snapend
+
+---
+
+@snap[west]
+# And...
+@snapend
+
+@snap[east]
+
+@ul
+
+### I didn't cover
+
+- Live updates
+- More complex navigation
+- Styling
+  - But it _is_ Forms
+- Probably other things...
+
+@ulend
+
+@snapend
+
+---
+
+### To Start
+
+@ul
+
+- https://fsprojects.github.io/Fabulous/
+- `dotnet new -i Fabulous.Templates`
+- `dotnet new fabulous-app -n MyFabulousApp`
+- `--WPF --UWP --macOS --GTK`
+- Fame, fortune, Hainton meetups...
+
+@ulend
+
+---
+
+# THANK YOU!
+
+- https://twitter.com/recumbent 
+- https://github.com/recumbent
