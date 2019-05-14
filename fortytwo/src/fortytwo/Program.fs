@@ -66,15 +66,9 @@ let quotes = [|
 let rnd = System.Random()  
 
 let webApp =
-    choose [
-        GET >=>
-            choose [
-                route "/" 
-                >=> warbler(fun _ ->
-                    Thread.Sleep(4000) 
-                    text (quotes.[rnd.Next(Array.length quotes)]))
-            ]
-        setStatusCode 404 >=> text "Not Found" ]
+    warbler(fun _ ->
+        Thread.Sleep(4000) 
+        text (quotes.[rnd.Next(Array.length quotes)]))
 
 // ---------------------------------
 // Error handler
@@ -89,10 +83,7 @@ let errorHandler (ex : Exception) (logger : ILogger) =
 // ---------------------------------
 
 let configureApp (app : IApplicationBuilder) =
-    let env = app.ApplicationServices.GetService<IHostingEnvironment>()
-    (match env.IsDevelopment() with
-    | true  -> app.UseDeveloperExceptionPage()
-    | false -> app.UseGiraffeErrorHandler errorHandler)
+    (app.UseGiraffeErrorHandler errorHandler)
         .UseGiraffe(webApp)
 
 let configureServices (services : IServiceCollection) =
