@@ -1,0 +1,1 @@
+copy-item ./examples/HelloWorld-01.fs ./HelloWorld/HelloWorld/HelloWorld.fs
