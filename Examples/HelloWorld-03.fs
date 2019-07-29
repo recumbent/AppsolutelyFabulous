@@ -41,11 +41,12 @@ module App =
 
     let init () = initModel, Cmd.none
 
+    let endpoint = 
+        match Device.RuntimePlatform with
+        | Device.Android -> "http://10.0.2.2:5000"
+        | _ -> "http://localhost:5000"
+
     let getQuote =
-        let endpoint = 
-            match Device.RuntimePlatform with
-            | Device.Android -> "http://10.0.2.2:5000"
-            | _ -> "http://localhost:5000"
         async {
             do! Async.SwitchToThreadPool()
             let! quote = Http.AsyncRequestString(endpoint)
