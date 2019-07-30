@@ -69,7 +69,7 @@ https://elm-lang.org/
 
 Note:
 
-Well... elm describes itself as "A delightful language for reliable webapps" - that's a bold claim, but there are good reasons why one might find it delightful and there's a strong argument that functional programming lends itself to reliable applications 
+Well... elm describes itself as "A delightful language for reliable webapps" - that's a bold claim, but there are good reasons why one might find it delightful and there's a strong argument that functional programming lends itself to reliable applications
 
 ---
 
@@ -105,9 +105,9 @@ And there is a framework that makes it possible to run an application, and this 
 @snapend
 
 @snap[east span-30]
-@box[bg-white text-black rounded fragment text-15 box-padding](Model)
-@box[bg-white text-black rounded fragment text-15 box-padding](View)
-@box[bg-white text-black rounded fragment text-15 box-padding](Update)
+@box[bg-black text-white rounded fragment text-15 box-padding](Model)
+@box[bg-black text-white rounded fragment text-15 box-padding](View)
+@box[bg-black text-white rounded fragment text-15 box-padding](Update)
 @snapend
 
 Note:
@@ -121,12 +121,26 @@ So what is the model view architecture?
 
 # Model
 
+```F#
+{  
+     Id : ItemId  
+     Name : string  
+     Required : bool  
+     Purchased : bool  
+     Aisle : Aisle Option  
+}  
+```
+
 Note:
 We start with a Model that defines the current state of your app, it could be all your data for a small app
 
 ---
 
 # View
+
+```F#
+    let view (model: Model) dispatch =
+```
 
 Note:
 
@@ -135,6 +149,10 @@ The view is a pure function that takes your model and returns the view, in the c
 ---
 
 # Update
+
+```F#
+    let update msg model =
+```
 
 Note:
 
@@ -187,7 +205,6 @@ The value we type in the box will appear in the greeting
 @snap[east span-40]
 ![wireframe](images/wireframe-02.jpg)
 @snapend
-
 
 ---?code=Examples/HelloWorld-02.fs&lang=fsharp&color=#1E1F21&title=Hello World App with Subscription
 
