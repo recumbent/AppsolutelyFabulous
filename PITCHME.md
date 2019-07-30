@@ -246,6 +246,22 @@ Live demo 03
 
 ---
 
+# Fabinals - an example with more depth
+
+Note:
+
+Clearly these are very simple examples to just begin to touch on how all of this gets wired together, they're not pretty and they don't show any depth.
+
+There's a new feature of Xamrin.Forms called "Shell" - which provides a shell appication and for that they have a sample app call Xaminals, this has been ported fairly directly to Fabulous as Fabinals...
+
+Lets take a look at the app and a bit of the code
+
+---
+
+Live demo 04 - Faminals
+
+---
+
 @snap[west]
 # So...
 @snapend
