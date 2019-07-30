@@ -242,20 +242,21 @@ So lets add a page with a random quote on it
 
 ---?code=Examples/HelloWorld-03.fs&lang=fsharp&color=#1E1F21
 
-@[21-26](Model with Page and Quote)
 @[11-13](Page Type)
 @[15-19](Request State)
+@[21-26](Model with Page and Quote)
 @[35-40](Initialise new properties)
-@[104-107](View Button on Main Page)
+@[105-108](View Button on Main Page)
 @[31](Page changed message)
-@[61-68](Handle page changed)
-@[63-65](Main page)
-@[66-68](Quote page - command)
-@[44-53](getQuote command)
-@[52](QuoteReceived message)
-@[69-70](Handle QuoteReceived)
+@[62-69](Handle page changed)
+@[64-66](Main page)
+@[67-69](Quote page - command)
+@[49-54](getQuote command)
+@[44-47](Platform detection)
+@[53](QuoteReceived message)
+@[70-71](Handle QuoteReceived)
 @[109-137](Quote Page)
-@[77-82](Quote Text)
+@[78-83](Quote Text)
 
 ---
 
@@ -275,7 +276,7 @@ Lets take a look at the app and a bit of the code
 
 ---
 
-Live demo 04 - Faminals
+Live demo 04 - Fabinals
 
 ---
 
@@ -334,7 +335,7 @@ Live demo 04 - Faminals
 
 - Live updates
 - More complex navigation
-- Styling
+- Styling (in detail)
   - But it _is_ Forms
 - Probably other things...
 
