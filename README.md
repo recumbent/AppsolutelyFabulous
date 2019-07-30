@@ -4,7 +4,7 @@ Presentation on Fabulous 2019
 
 ## Helpful hints
 
-[Docker Desktop Launc](https://gitpitch.com/docs/pro-features/desktop-launch/)
+[Docker Desktop Launch](https://gitpitch.com/docs/pro-features/desktop-launch/)
 
 Make sure one can talk to the registry:
 
